@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AG Details Services</title>
+  <meta name="description" content="View AG Details services including basic and full detailing, paint correction, wraps, engraving, and custom automotive work." />
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --bg:#0a0a0b; --surface:#111214; --surface-2:#17181b; --surface-3:#1d1f23; --border:rgba(255,255,255,.1);
+      --text:#f4f4f5; --muted:#a1a1aa; --faint:#6b7280; --accent:#d4af37; --accent-2:#ffffff;
+      --shadow:0 20px 50px rgba(0,0,0,.35); --radius:22px; --radius-sm:14px;
+      --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.25rem; --space-6:1.5rem; --space-8:2rem; --space-10:2.5rem; --space-12:3rem; --space-16:4rem; --space-20:5rem;
+      --text-sm:clamp(.9rem,.86rem+.2vw,1rem); --text-base:clamp(1rem,.97rem+.25vw,1.1rem); --text-lg:clamp(1.15rem,1rem+.7vw,1.55rem); --text-xl:clamp(1.5rem,1.1rem+1.5vw,2.4rem); --text-2xl:clamp(2.3rem,1.3rem+4vw,5rem);
+      --font-body:'Satoshi', system-ui, sans-serif; --font-display:'Cabinet Grotesk', 'Satoshi', system-ui, sans-serif;
+      --container:1200px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:var(--font-body);background:linear-gradient(180deg,#070708,#0b0c0f 35%,#090909);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block} button,input,textarea{font:inherit}
+    .container{width:min(calc(100% - 2rem),var(--container));margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(10,10,11,.76);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.9rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .logo{width:42px;height:42px;border:1px solid rgba(255,255,255,.14);border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,#17181b,#0e0f11);box-shadow:var(--shadow)}
+    .navlinks{display:flex;gap:1rem;flex-wrap:wrap}
+    .navlinks a{color:var(--muted);font-size:var(--text-sm)}
+    .navcta{display:flex;gap:.75rem;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.9rem 1.2rem;border-radius:999px;border:1px solid var(--border);transition:.2s ease;font-weight:700}
+    .btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--text);color:#0b0b0c;border-color:transparent} .btn-secondary{background:transparent;color:var(--text)}
+    .hero{padding:5rem 0 3rem;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:end}
+    .eyebrow{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .8rem;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.03);color:#d4d4d8;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.05;margin:0} h1{font-size:var(--text-2xl);max-width:10ch;margin:.9rem 0 1rem}
+    .lede{max-width:58ch;color:#c7c7cd;font-size:var(--text-lg)}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0 2rem}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+    .stat{padding:1rem;border:1px solid var(--border);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
+    .stat strong{display:block;font-size:1.4rem}
+    .hero-card{position:relative;min-height:560px;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);background:#111}
+    .hero-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.18) 35%,rgba(0,0,0,.7) 100%)}
+    .hero-badge{position:absolute;left:1rem;bottom:1rem;right:1rem;z-index:2;padding:1rem 1.1rem;border-radius:18px;background:rgba(8,8,9,.74);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1)}
+    section{padding:4.5rem 0}.section-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:2rem}.section-head p{max-width:54ch;color:var(--muted)}
+    .grid-3,.grid-2{display:grid;gap:1.25rem}.grid-3{grid-template-columns:repeat(3,1fr)} .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem}
+    .card h3{font-size:1.3rem;margin-bottom:.55rem}.card p{color:var(--muted)}
+    .service-tag{display:inline-block;margin-top:1rem;color:var(--text);font-size:.92rem}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+    .gallery-main{display:grid;grid-template-columns:1.25fr .75fr;gap:1rem}
+    .gallery-stack{display:grid;gap:1rem}
+    .photo{overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:#121212}
+    .photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.photo:hover img{transform:scale(1.03)}
+    .photo.tall{min-height:540px}.photo.medium{min-height:260px}.photo.short{min-height:220px}
+    .coverage{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}.coverage span{padding:.65rem .85rem;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:#d4d4d8}
+    .cta-band{padding:1.4rem;border:1px solid rgba(212,175,55,.22);background:linear-gradient(180deg,rgba(212,175,55,.12),rgba(255,255,255,.03));border-radius:24px;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+    .quote{display:grid;grid-template-columns:1.1fr .9fr;gap:1.4rem}
+    .list{display:grid;gap:.9rem;margin-top:1.2rem}.list div{padding:.95rem 1rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px}
+    .contact-card a{display:block;padding:.95rem 1rem;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);margin-bottom:.85rem}
+    footer{padding:2rem 0 3rem;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    .subpage-hero{padding:3.5rem 0 2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+    @media (max-width: 980px){
+      .hero-grid,.grid-3,.grid-2,.split,.gallery-main,.quote{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .nav{flex-wrap:wrap}.navlinks{order:3;width:100%}.hero-card{min-height:420px}
+    }
+    @media (max-width: 640px){
+      h1{max-width:12ch}.container{width:min(calc(100% - 1.2rem),var(--container))}
+      .hero{padding-top:3rem}.section-head{display:block}.hero-actions,.navcta{width:100%}.btn{width:100%}
+      .photo.tall{min-height:360px}.photo.medium,.photo.short{min-height:220px}
+    }
+  </style>
+</head>
+<body>
+<header class="topbar"><div class="container nav"><a class="brand" href="./ag-details-home.html"><span class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 18L10.2 6H13.8L19 18M7.2 13.2H16.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20H20" stroke="#d4af37" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>AG Details</span></a><nav class="navlinks"><a href="./ag-details-home.html">Home</a><a href="./ag-details-services.html">Services</a><a href="./ag-details-contact.html">Contact</a></nav><div class="navcta"><a class="btn btn-secondary" href="mailto:agdetails@yahoo.com">Email</a><a class="btn btn-primary" href="tel:8609223213">Call Now</a></div></div></header>
+<main>
+<section class="subpage-hero"><div class="container"><span class="eyebrow">AG Details services</span><h1 style="max-width:12ch">Services built around clean results and custom work.</h1><p class="lede">Use this page to show customers what you offer clearly, then guide them to call or message for a quote based on vehicle condition and project scope.</p></div></section>
+<section><div class="container grid-2">
+<article class="card"><h2>Basic Interior & Exterior Detail</h2><p>A solid reset for vehicles that need a clean, sharp presentation without the deeper labor of correction-level work.</p><div class="list"><div>Maintenance-focused cleanup</div><div>Interior wipe down and refresh</div><div>Exterior wash and presentation finish</div></div></article>
+<article class="card"><h2>Full Interior & Exterior Detail</h2><p>A more complete reconditioning-style service for clients who want the car brought back stronger inside and out.</p><div class="list"><div>Deeper interior attention</div><div>Exterior finish enhancement</div><div>Better overall turnaround</div></div></article>
+<article class="card"><h2>Paint Correction</h2><p>For drivers who want improved gloss, cleaner reflections, and a more refined look before events, photos, or premium preservation work.</p><div class="list"><div>Gloss-focused improvement</div><div>Refinement of paint appearance</div><div>Custom quoted by condition</div></div></article>
+<article class="card"><h2>Partial & Full Wraps</h2><p>Custom wrap work for drivers looking to change the look of key panels or transform the full vehicle appearance.</p><div class="list"><div>Accent and partial wrap options</div><div>Full wrap consultation</div><div>Quoted by vehicle and scope</div></div></article>
+<article class="card"><h2>Engraving</h2><p>Specialty detailing-adjacent custom work for clients who want a more personalized finish and a unique presentation element.</p><div class="list"><div>Custom-request based</div><div>Project-specific pricing</div><div>Best discussed directly</div></div></article>
+<article class="card"><h2>Custom Requests</h2><p>Not every job fits a preset package. Use this category for one-off projects and clients who need a custom solution.</p><div class="list"><div>Special vehicles welcome</div><div>Tailored recommendations</div><div>Call or email for estimate</div></div></article>
+</div></section>
+<section><div class="container quote"><div class="card"><h2>Need pricing?</h2><p>You can keep exact pricing flexible and quote based on size, condition, and project scope while still showing clear service categories on the site.</p><a class="btn btn-primary" href="./ag-details-contact.html">Request a quote</a></div><div class="photo medium"><img src="./assets/IMG_7212.webp" alt="Silver Porsche covered in foam during detailing wash process" width="1200" height="900" loading="lazy" /></div></div></section>
+</main>
+<footer><div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap"><div>AG Details • Services</div><div>Where clean meets precision.</div></div></footer>
+</body></html>
